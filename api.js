@@ -13,7 +13,7 @@ app.post('/api/webhook', function (req, res) {
 
 app.post('/api/devbryce-jekyll', function (req, res) {
 	var blogSrcDir = '/home/devbryce/devbryce/devbryce-jekyll';
-	var cmdStr = 'cd ' + blogSrcDir + ' && jekyll build --destination /home/devbryce/public';
+	var cmdStr = 'cd ' + blogSrcDir + ' && git pull && jekyll build --destination /home/devbryce/public';
 	var child = exec(cmdStr, {async:true});
 	
 	child.stdout.on('data', function(data) {
