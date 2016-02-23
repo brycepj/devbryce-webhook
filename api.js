@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
+require('shelljs/global');
+
+
 
 app.post('/api/webhook', function (req, res) {
   fs.appendFile('buildLog.txt', 'webhook call' + new Date(), function (err) {
